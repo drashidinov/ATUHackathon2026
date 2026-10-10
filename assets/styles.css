@@ -337,3 +337,4 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .dates li { grid-template-columns: 1fr; gap: 2px; }
   .track { padding: 20px; }
 }
+.footer__label { font: 500 11.5px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: rgba(244, 239, 228, .55); }
