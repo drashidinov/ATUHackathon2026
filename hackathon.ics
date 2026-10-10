@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ATU//Smart Food Industries Hackathon 2026//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:smart-food-industries-2026@atu-hackathon
+DTSTAMP:20261010T000000Z
+DTSTART:20261112T050000Z
+DTEND:20261112T110000Z
+SUMMARY:Smart Food Industries — онлайн-хакатон ATU
+DESCRIPTION:Шестичасовой студенческий онлайн-хакатон ATU. Подключение с 09:30\, старт в 10:00 (Алматы\, UTC+5). Ссылки на трансляцию придут в письме-подтверждении.
+LOCATION:Онлайн
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Smart Food Industries начинается через час
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Food Industries — онлайн-хакатон ATU · 12 ноября 2026</title>
+  <meta name="description" content="Шестичасовой студенческий онлайн-хакатон Алматинского технологического университета о пищевых отходах и циркулярной экономике. 12 ноября 2026.">
+  <meta property="og:title" content="Smart Food Industries — онлайн-хакатон ATU">
+  <meta property="og:description" content="12 ноября 2026 · 6 часов · онлайн · 4 трека · призовой фонд">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f2a1e">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap&subset=cyrillic-ext" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">↓</a>
+
+  <header class="topbar" id="top">
+    <div class="wrap topbar__in">
+      <a class="brand" href="#top" aria-label="ATU · Smart Food Industries">
+        <img src="assets/favicon.svg" alt="" width="32" height="32">
+        <span><b>ATU</b> Hackathon 2026</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#about" data-t="nav.about"></a>
+        <a href="#tracks" data-t="nav.tracks"></a>
+        <a href="#format" data-t="nav.format"></a>
+        <a href="#schedule" data-t="nav.schedule"></a>
+        <a href="#criteria" data-t="nav.criteria"></a>
+        <a href="#prizes" data-t="nav.prizes"></a>
+        <a href="#faq" data-t="nav.faq"></a>
+      </nav>
+      <div class="topbar__right">
+        <div class="lang" role="group" aria-label="Язык / Тіл">
+          <button type="button" data-lang="kk">ҚАЗ</button>
+          <button type="button" data-lang="ru">РУС</button>
+        </div>
+        <a class="btn btn--small" href="#register" data-t="nav.register"></a>
+        <button class="burger" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__in">
+        <div class="hero__text">
+          <p class="eyebrow" data-t="hero.eyebrow"></p>
+          <h1 class="hero__title">Smart<br>Food<br><em>Industries</em></h1>
+          <p class="hero__lead" data-t="hero.lead"></p>
+          <div class="hero__cta">
+            <a class="btn btn--accent" href="#register" data-t="hero.cta"></a>
+            <a class="btn btn--ghost" href="docs/polozhenie-hackathon-atu.pdf" target="_blank" rel="noopener" data-t="hero.doc"></a>
+            <a class="btn btn--ghost" href="hackathon.ics" download data-t="hero.ics"></a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <svg class="loop" viewBox="0 0 400 400">
+            <defs>
+              <path id="ring" d="M200,200 m-150,0 a150,150 0 1,1 300,0 a150,150 0 1,1 -300,0"/>
+              <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+              </marker>
+            </defs>
+            <g class="loop__spin">
+              <path class="loop__arc" d="M200,50 A150,150 0 0,1 343,155" marker-end="url(#arrow)"/>
+              <path class="loop__arc" d="M350,200 A150,150 0 0,1 245,343" marker-end="url(#arrow)"/>
+              <path class="loop__arc" d="M200,350 A150,150 0 0,1 57,245" marker-end="url(#arrow)"/>
+              <path class="loop__arc" d="M50,200 A150,150 0 0,1 155,57" marker-end="url(#arrow)"/>
+            </g>
+            <g class="loop__nodes">
+              <circle cx="200" cy="50" r="10"/><circle cx="350" cy="200" r="10"/>
+              <circle cx="200" cy="350" r="10"/><circle cx="50" cy="200" r="10"/>
+            </g>
+            <text class="loop__label" x="200" y="22" text-anchor="middle" data-loop="0"></text>
+            <text class="loop__label" x="374" y="205" text-anchor="end" data-loop="1" transform="translate(16 32)"></text>
+            <text class="loop__label" x="200" y="392" text-anchor="middle" data-loop="2"></text>
+            <text class="loop__label" x="26" y="205" text-anchor="start" data-loop="3" transform="translate(-16 32)"></text>
+            <text class="loop__center" x="200" y="196" text-anchor="middle">6h</text>
+            <text class="loop__sub" x="200" y="228" text-anchor="middle">12.11.2026</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="countdown" id="countdown" aria-live="polite">
+          <span class="countdown__label" data-t="hero.countdownLabel"></span>
+          <div class="countdown__cells"></div>
+        </div>
+        <dl class="facts" id="facts"></dl>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <p class="kicker"><span>01</span><span data-t="about.kicker"></span></p>
+        <h2 data-t="about.title"></h2>
+        <div class="about__grid">
+          <div>
+            <p class="about__mission" data-t="about.mission"></p>
+            <p class="about__goal" data-t="about.goal"></p>
+          </div>
+          <ul class="blocks" id="blocks"></ul>
+        </div>
+        <h3 class="subhead" data-t="about.statsTitle"></h3>
+        <ul class="stats" id="stats"></ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="tracks">
+      <div class="wrap">
+        <p class="kicker"><span>02</span><span data-t="tracks.kicker"></span></p>
+        <h2 data-t="tracks.title"></h2>
+        <p class="lead" data-t="tracks.sub"></p>
+        <div class="tracks" id="trackList"></div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="format">
+      <div class="wrap">
+        <p class="kicker"><span>03</span><span data-t="format.kicker"></span></p>
+        <h2 data-t="format.title"></h2>
+        <ol class="steps" id="formatSteps"></ol>
+        <div class="need">
+          <h3 data-t="format.needTitle"></h3>
+          <ul id="needList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="schedule">
+      <div class="wrap">
+        <p class="kicker"><span>04</span><span data-t="schedule.kicker"></span></p>
+        <div class="headrow">
+          <h2 data-t="schedule.title"></h2>
+          <span class="chip" data-t="schedule.note"></span>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+        <h3 class="subhead" data-t="schedule.stagesTitle"></h3>
+        <ol class="stages" id="stages"></ol>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="criteria">
+      <div class="wrap">
+        <p class="kicker"><span>05</span><span data-t="criteria.kicker"></span></p>
+        <h2 data-t="criteria.title"></h2>
+        <p class="lead" data-t="criteria.sub"></p>
+        <div class="criteria__grid">
+          <ul class="crit" id="critList"></ul>
+          <aside class="side">
+            <div class="card">
+              <h3 data-t="criteria.penaltiesTitle"></h3>
+              <ul class="pen" id="penList"></ul>
+            </div>
+            <div class="card card--note">
+              <h3 data-t="criteria.aiTitle"></h3>
+              <p data-t="criteria.ai"></p>
+            </div>
+          </aside>
+        </div>
+        <h3 class="subhead" data-t="criteria.pitchTitle"></h3>
+        <p class="muted" data-t="criteria.pitchNote"></p>
+        <ol class="slides" id="slides"></ol>
+      </div>
+    </section>
+
+    <section class="section" id="prizes">
+      <div class="wrap">
+        <p class="kicker"><span>06</span><span data-t="prizes.kicker"></span></p>
+        <h2 data-t="prizes.title"></h2>
+        <ul class="podium" id="podium"></ul>
+        <p class="muted" data-t="prizes.note"></p>
+        <div class="prizes__grid">
+          <div>
+            <h3 class="subhead subhead--tight"><span data-t="prizes.nomTitle"></span> <small data-t="prizes.nomNote"></small></h3>
+            <ul class="noms" id="noms"></ul>
+            <p class="muted" data-t="prizes.cert"></p>
+          </div>
+          <div>
+            <h3 class="subhead subhead--tight" data-t="prizes.afterTitle"></h3>
+            <ul class="after" id="after"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--accent" id="register">
+      <div class="wrap register">
+        <div>
+          <p class="kicker"><span>07</span><span data-t="register.kicker"></span></p>
+          <h2 data-t="register.title"></h2>
+          <p class="lead" data-t="register.who"></p>
+          <ol class="dates" id="dates"></ol>
+        </div>
+        <div class="card card--form">
+          <h3 data-t="register.formTitle"></h3>
+          <ul class="checks" id="formList"></ul>
+          <p class="solo" data-t="register.solo"></p>
+          <a class="btn btn--dark btn--wide" id="regBtn" href="#" target="_blank" rel="noopener"></a>
+          <p class="fine" data-t="register.consent"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="org">
+      <div class="wrap">
+        <p class="kicker"><span>08</span><span data-t="org.kicker"></span></p>
+        <ul class="org" id="orgList"></ul>
+        <p class="muted" data-t="org.partners"></p>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="faq">
+      <div class="wrap faq">
+        <div>
+          <p class="kicker"><span>09</span><span data-t="faq.kicker"></span></p>
+          <h2 data-t="faq.title"></h2>
+        </div>
+        <div id="faqList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <div>
+        <p class="footer__title">Smart Food Industries · 2026</p>
+        <p data-t="footer.address"></p>
+      </div>
+      <div class="footer__links">
+        <a href="docs/polozhenie-hackathon-atu.pdf" target="_blank" rel="noopener" data-t="footer.doc"></a>
+        <a href="https://atu.edu.kz" target="_blank" rel="noopener" data-t="footer.site"></a>
+      </div>
+    </div>
+  </footer>
+
+  <noscript><p style="padding:16px">Для отображения страницы включите JavaScript · Бетті көру үшін JavaScript қосыңыз</p></noscript>
+  <script src="assets/content.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
