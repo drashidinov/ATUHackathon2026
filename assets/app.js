@@ -1,7 +1,7 @@
 /* ===== Настройки — меняйте здесь ===== */
 const CONFIG = {
   // Ссылка на форму регистрации (Google Forms, MS Forms и т.п.). Пока пусто — кнопка показывает «скоро».
-  registrationUrl: "",
+  registrationUrl: "https://forms.gle/gDgKDPFRtabXVDjP6",
   start: "2026-11-12T10:00:00+05:00",
   end: "2026-11-12T16:00:00+05:00",
   defaultLang: "ru"
