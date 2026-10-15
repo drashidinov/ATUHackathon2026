@@ -338,3 +338,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .track { padding: 20px; }
 }
 .footer__label { font: 500 11.5px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: rgba(244, 239, 228, .55); }
+.demo ul { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.demo li { font-size: 13.5px; padding: 6px 10px; border-radius: 8px; background: var(--cream); color: var(--ink); }
+.demo__note { margin-top: 10px; padding-left: 12px; border-left: 3px solid var(--tomato); color: var(--ink); font-weight: 500; font-size: 14.5px; }
+#prizes .headrow { align-items: center; }
+.tracks { align-items: start; }

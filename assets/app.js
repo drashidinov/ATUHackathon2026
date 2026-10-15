@@ -68,11 +68,10 @@ const CONFIG = {
       const a = el("article", "track" + (tr.pending ? " track--pending" : ""));
       const head = el("header", "track__head");
       head.append(el("span", "track__num", "0" + (i + 1)), el("span", "track__en", tr.en));
-      if (tr.pending) head.append(el("span", "badge", t.tracks.soon));
       a.append(head, el("h3", "track__name", tr.name));
       const body = el("div", "track__body");
-      if (!tr.pending) body.append(el("p", "track__label", t.tracks.problem));
-      body.append(el("p", null, tr.problem));
+      if (tr.focus) body.append(el("p", "track__label", t.tracks.focus), el("p", null, tr.focus));
+      if (tr.problem) body.append(el("p", "track__label", t.tracks.problem), el("p", null, tr.problem));
       if (tr.task) {
         body.append(el("p", "track__label", t.tracks.task), el("p", null, tr.task));
       }
@@ -84,6 +83,13 @@ const CONFIG = {
           ol.append(li);
         });
         body.append(ol);
+      }
+      if (tr.demo) {
+        const box = el("div", "demo");
+        const ul = el("ul");
+        tr.demo.forEach((x) => ul.append(el("li", null, x)));
+        box.append(el("p", "track__label", tr.demoTitle), ul, el("p", "demo__note", tr.demoNote));
+        body.append(box);
       }
       const tags = el("ul", "tags");
       tr.tags.forEach((x) => tags.append(el("li", null, x)));
@@ -144,7 +150,6 @@ const CONFIG = {
       li.append(el("span", "podium__place", place), el("strong", null, sum), el("span", "podium__dip", dip));
       return li;
     });
-    fill("noms", t.prizes.noms, (x) => el("li", null, x));
     fill("after", t.prizes.after, (x) => el("li", null, x));
 
     fill("dates", t.register.dates, ([d, p]) => {
