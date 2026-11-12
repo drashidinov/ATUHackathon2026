@@ -198,15 +198,36 @@ const CONFIG = {
       return { c, n };
     });
     box.replaceChildren(...cells.map((x) => x.c));
-    function upd() {
-      const now = Date.now();
-      if (now >= end) { label.textContent = t.ended; box.hidden = true; clearInterval(tick); return; }
-      if (now >= start) { label.textContent = t.live; box.hidden = true; markNow(); return; }
-      label.textContent = t.countdownLabel;
-      box.hidden = false;
-      let s = Math.floor((start - now) / 1000);
+    const root = $("#countdown");
+    let bar = root.querySelector(".countdown__bar");
+    if (!bar) { bar = el("div", "countdown__bar"); bar.append(el("span")); root.append(bar); }
+    function show(ms, withDays) {
+      const s = Math.max(0, Math.floor(ms / 1000));
       const v = [Math.floor(s / 86400), Math.floor((s % 86400) / 3600), Math.floor((s % 3600) / 60), s % 60];
       v.forEach((x, i) => (cells[i].n.textContent = String(x).padStart(2, "0")));
+      cells[0].c.hidden = !withDays;
+    }
+    function upd() {
+      const now = Date.now();
+      if (now >= end) {
+        label.textContent = t.ended; box.hidden = true; bar.hidden = true;
+        root.classList.remove("is-live"); markNow(); clearInterval(tick); return;
+      }
+      box.hidden = false;
+      if (now >= start) {
+        // Идёт хакатон: обратный отсчёт до финиша (16:00)
+        root.classList.add("is-live");
+        label.textContent = t.live;
+        show(end - now, false);
+        bar.hidden = false;
+        bar.firstChild.style.width = ((now - start) / (end - start)) * 100 + "%";
+        markNow();
+        return;
+      }
+      root.classList.remove("is-live");
+      bar.hidden = true;
+      label.textContent = t.countdownLabel;
+      show(start - now, true);
     }
     upd();
     tick = setInterval(upd, 1000);

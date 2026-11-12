@@ -343,3 +343,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .demo__note { margin-top: 10px; padding-left: 12px; border-left: 3px solid var(--tomato); color: var(--ink); font-weight: 500; font-size: 14.5px; }
 #prizes .headrow { align-items: center; }
 .tracks { align-items: start; }
+/* живой таймер до финиша */
+.countdown.is-live .countdown__label { color: var(--mustard); display: inline-flex; align-items: center; gap: 10px; font-size: 14px; }
+.countdown.is-live .countdown__label::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--tomato); box-shadow: 0 0 0 0 rgba(228, 84, 44, .7); animation: pulse 1.6s infinite; }
+.countdown.is-live .cd { background: rgba(228, 84, 44, .18); }
+.countdown.is-live .cd__n { font-size: 38px; }
+.countdown__bar { flex-basis: 100%; height: 6px; border-radius: 99px; background: rgba(244, 239, 228, .12); overflow: hidden; }
+.countdown__bar span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--leaf), var(--mustard), var(--tomato)); border-radius: 99px; transition: width 1s linear; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(228, 84, 44, 0); } 100% { box-shadow: 0 0 0 0 rgba(228, 84, 44, 0); } }
+@media (prefers-reduced-motion: reduce) { .countdown.is-live .countdown__label::before { animation: none; } }
+.cd[hidden], .countdown__bar[hidden], .countdown__cells[hidden] { display: none; }
